@@ -6,9 +6,17 @@
 <struts>
 
     <package name="default" namespace="/" extends="struts-default">
-		<action name="uploadAction" class="com.bill.upload.action.uploadAction">
+		<action name="uploadAction" class="com.bill.upload.action.uploadAction" method="execute">
 			<result name="success">
 				/success.jsp
+			</result>
+		</action>
+		<action name="continueAction">
+			<result>/upload.jsp</result>
+		</action>
+		<action name="listAction" class="com.bill.upload.action.uploadAction" method="list">
+			<result name="list">
+				/list.jsp
 			</result>
 		</action>
     </package>
